@@ -1,4 +1,5 @@
 defmodule Duper.Results do
+  import Logger
   use GenServer
   @me __MODULE__
 
@@ -17,6 +18,7 @@ defmodule Duper.Results do
 
   # Server
   def init(:no_args) do
+    Logger.info("Starting Results")
     {:ok, %{}}
   end
 

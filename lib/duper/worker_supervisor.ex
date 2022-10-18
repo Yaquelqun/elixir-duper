@@ -4,7 +4,7 @@ defmodule Duper.WorkerSupervisor do
   @me WorkerSupervisor
 
   def start_link(_) do
-    DynamicSupervisor.start_link(__MODULE__, :no_args, name: @me)
+    DynamicSupervisor.start_link(__MODULE__, :noargs, name: @me)
   end
 
   def init(:noargs) do

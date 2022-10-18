@@ -1,4 +1,5 @@
 defmodule Duper.PathFinder do
+  import Logger
   use GenServer
   @me PathFinder
 
@@ -7,10 +8,11 @@ defmodule Duper.PathFinder do
   end
 
   def next_path() do
-    GenServer.call(@me, next_path)
+    GenServer.call(@me, :next_path)
   end
 
   def init(path) do
+    Logger.info("Starting path finder")
     DirWalker.start_link(path)
   end
 
